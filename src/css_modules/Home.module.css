@@ -1,0 +1,21 @@
+.home {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgb(48, 56, 75); */
+  color: whitesmoke;
+  width: 100%;
+  background-color: rgb(48, 56, 75);
+}
+
+.pic {
+  height: 250px;
+  width: 250px;
+  border-radius: 500px;
+  border-style: solid;
+  border-color: whitesmoke;
+  border-width: 3px;
+  margin-bottom: 20px;
+}

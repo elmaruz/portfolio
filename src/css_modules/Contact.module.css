@@ -1,0 +1,18 @@
+.contact {
+  height: 400px;
+  color: whitesmoke;
+  background-color: rgb(78, 109, 184);
+  width: 100%;
+  margin-top: -22px;
+}
+
+.contact_cont {
+  position: relative;
+  top: 80px;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.contact_par {
+  margin-left: 11%;
+}
