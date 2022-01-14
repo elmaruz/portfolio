@@ -30,7 +30,7 @@
 .sep {
   height: 100%;
   width: 1px;
-  margin-right: 120px;
+  margin-right: 60px;
 }
 
 .table_cont {
@@ -43,6 +43,15 @@
   justify-content: space-between;
   align-items: center;
   margin: 10px;
+  font-size: 18px;
+}
+
+.table_label2 {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 7px;
   font-size: 18px;
 }
 
@@ -80,11 +89,18 @@
 
   .table_cont {
     width: 100%;
+    margin-left: 5%;
   }
 
   .table_label {
     width: 100%;
     font-size: 16px;
+  }
+
+  .table_label2 {
+    width: 100%;
+    font-size: 16px;
+    margin-right: 18px;
   }
 
   .table_box {

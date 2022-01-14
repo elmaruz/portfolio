@@ -71,16 +71,16 @@ export default function Skills() {
           <div className={`${s.table_cont}`}>
             <h3>Soft Skills</h3>
             <div className={`${s.table_box}`}>
-              <div className={`${s.table_label}`}>Punctual</div>
-              <div className={`${s.table_label}`}>Focused</div>
-              <div className={`${s.table_label}`}>Committed</div>
-              <div className={`${s.table_label}`}>Attentive to detail</div>
-              <div className={`${s.table_label}`}>Team-player</div>
-              <div className={`${s.table_label}`}>Good communicator</div>
-              <div className={`${s.table_label}`}>Adaptive</div>
-              <div className={`${s.table_label}`}>Troppo</div>
-              <div className={`${s.table_label}`}>Forte</div>
-              <div className={`${s.table_label}`}>Ao</div>
+              <div className={`${s.table_label2}`}>Punctual</div>
+              <div className={`${s.table_label2}`}>Focused</div>
+              <div className={`${s.table_label2}`}>Committed</div>
+              <div className={`${s.table_label2}`}>Attentive to detail</div>
+              <div className={`${s.table_label2}`}>Team-player</div>
+              <div className={`${s.table_label2}`}>Good communicator</div>
+              <div className={`${s.table_label2}`}>Adaptive</div>
+              <div className={`${s.table_label2}`}>Reliable</div>
+              <div className={`${s.table_label2}`}>Quick learner</div>
+              <div className={`${s.table_label2}`}>Proactive</div>
             </div>
           </div>
         </div>

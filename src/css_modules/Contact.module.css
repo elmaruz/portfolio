@@ -1,5 +1,5 @@
 .contact {
-  height: 400px;
+  height: 300px;
   color: whitesmoke;
   background-color: rgb(78, 109, 184);
   width: 100%;
@@ -13,6 +13,33 @@
   margin-right: 5%;
 }
 
-.contact_par {
-  margin-left: 11%;
+.contact_sec {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 16%;
+}
+
+.contact_link {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 800px) {
+  /* .contact_cont {
+    width: 100%;
+  } */
+
+  .contact {
+    display: block;
+  }
+  .contact_cont {
+    display: block;
+  }
+  .contact_sec {
+    position: relative;
+    top: 20%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
 }
