@@ -2,7 +2,7 @@
   display: flex;
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
   background-color: rgb(53, 53, 53);
   color: whitesmoke;
   height: 70px;
@@ -20,11 +20,22 @@
   width: 40%;
   justify-content: space-evenly;
   margin-right: 10px;
+  height: 100%;
 }
 
 .link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: whitesmoke;
+  height: 100%;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.link:hover {
+  background-color: rgb(85, 85, 85);
 }
 
 .menu {

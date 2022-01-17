@@ -13,21 +13,21 @@ export default function Navbar({ mobile }: Props) {
 
   return (
     <div className={`${s.main_nav}`}>
-      <span className={`${s.nav_name}`}>Leonardo Marussig</span>
+      <span className={`${s.nav_name}`}>Portfolio</span>
       <div className={`${s.links}`}>
         <a className={`${s.link}`} href='#'>
           Home
         </a>
-        <a className={`${s.link}`} href='#ABOUT'>
+        <a className={`${s.link}`} href='#about'>
           About
         </a>
-        <a className={`${s.link}`} href='#SKILLS'>
+        <a className={`${s.link}`} href='#skills'>
           Skills
         </a>
-        <a className={`${s.link}`} href='#PROJECTS'>
+        <a className={`${s.link}`} href='#projects'>
           Projects
         </a>
-        <a className={`${s.link}`} href='#CONTACT'>
+        <a className={`${s.link}`} href='#contact'>
           Contact
         </a>
       </div>

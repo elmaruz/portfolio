@@ -4,7 +4,7 @@ import { BsFillLightbulbFill, BsFilm } from 'react-icons/bs';
 
 export default function About() {
   return (
-    <div id='ABOUT' className={`${s.about}`}>
+    <div id='about' className={`${s.about}`}>
       <div className={`${s.about_cont}`}>
         <h1>About</h1>
         <div className={`${s.about_par}`}>

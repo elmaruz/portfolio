@@ -4,11 +4,11 @@ import { IconContext } from 'react-icons/lib';
 
 export default function Contact() {
   return (
-    <div id='CONTACT' className={`${s.contact}`}>
+    <div id='contact' className={`${s.contact}`}>
       <div className={`${s.contact_cont}`}>
         <h1>Contact</h1>
         <div className={`${s.contact_sec}`}>
-          <IconContext.Provider value={{ size: '70' }}>
+          <IconContext.Provider value={{ size: '60' }}>
             <a
               href='http://linkedin.com/in/leonardo-marussig-dev'
               className={s.contact_link}>

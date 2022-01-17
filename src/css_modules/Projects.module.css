@@ -28,7 +28,9 @@
   margin-left: 13%;
 }
 
-.proj_box {
+.proj_box1,
+.proj_box2,
+.proj_box3 {
   display: flex;
   justify-content: center;
   background-color: rgba(71, 172, 255, 0.3);
@@ -36,17 +38,37 @@
   height: 100%;
   width: 30%;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: transform 0.3s ease;
+}
+
+.proj_box1 {
+  background-image: url(../../public/images/weather_app.png);
+  background-position: center;
+  background-size: cover;
+  transition: all 0.3s ease-in-out;
+}
+
+.proj_box2 {
+  background-image: url(../../public/images/Videogames_disp.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.proj_box3 {
+  background-image: url(../../public/images/jsec.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .proj_box:hover {
   transform: scale(1.06);
 }
 
-.proj_box:hover .proj_label {
+.link {
   height: 100%;
   width: 100%;
-  visibility: visible;
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 .thumbnail {
@@ -55,24 +77,65 @@
   border-radius: 12px;
 }
 
+.par {
+  text-align: center;
+  width: 65%;
+  height: 80%;
+  position: relative;
+  bottom: 3%;
+}
+
+.title {
+  position: relative;
+  top: 10%;
+  font-weight: bold;
+}
+
 .proj_label {
   display: flex;
-  visibility: collapse;
+  visibility: visible;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  position: absolute;
-  /* top: 0%;
+  position: relative;
+  top: 50%;
   left: 0%;
-  right: 0%; */
+  right: 0%;
   bottom: 0%;
-  height: 0%;
-  width: 0%;
-  z-index: 1;
-  border-radius: 12px;
-  background-color: rgba(53, 53, 53, 0.95);
+  height: 50%;
+  width: 100%;
+  /* z-index: 1; */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  background-color: rgba(39, 38, 38, 0.95);
   transition: height 0.3s ease-in-out;
 }
+
+.symbols {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  bottom: 10%;
+  /* margin-left: 35%; */
+  width: 20%;
+  justify-content: space-between;
+}
+
+.symbols2 {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  bottom: 10%;
+  /* margin-top: 10px; */
+  width: 50%;
+  justify-content: space-between;
+}
+
+/* .proj_box:hover .proj_label {
+  height: 100%;
+  width: 100%;
+  visibility: visible;
+} */
 
 @media screen and (max-width: 800px) {
   .proj {
@@ -87,8 +150,53 @@
     width: 100%;
   }
 
-  .proj_box {
+  .proj_box1,
+  .proj_box2,
+  .proj_box3 {
     width: 100%;
     height: 30%;
+  }
+
+  .par {
+    width: 70%;
+  }
+
+  .symbols {
+    width: 15%;
+  }
+}
+
+@media screen and (hover: hover) and (pointer: fine) {
+  .proj_label {
+    visibility: collapse;
+    height: 0%;
+    width: 0%;
+  }
+  .proj_box1:hover .proj_label {
+    height: 50%;
+    width: 100%;
+    visibility: visible;
+  }
+  .proj_box2:hover .proj_label {
+    height: 50%;
+    width: 100%;
+    visibility: visible;
+  }
+  .proj_box3:hover .proj_label {
+    height: 50%;
+    width: 100%;
+    visibility: visible;
+  }
+
+  .proj_box1:hover {
+    transform: scale(1.06);
+  }
+
+  .proj_box2:hover {
+    transform: scale(1.06);
+  }
+
+  .proj_box3:hover {
+    transform: scale(1.06);
   }
 }

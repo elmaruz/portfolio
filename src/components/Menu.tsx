@@ -23,23 +23,23 @@ export default function Menu({ mobile }: Props) {
         <a className={`${s.menu_link}`} href='#' onClick={onClickHandler}>
           Home <AiFillHome className={`${s.icon}`} size={22} />
         </a>
-        <a className={`${s.menu_link}`} href='#ABOUT' onClick={onClickHandler}>
+        <a className={`${s.menu_link}`} href='#about' onClick={onClickHandler}>
           About <AiFillInfoCircle className={`${s.icon}`} size={22} />
         </a>
-        <a className={`${s.menu_link}`} href='#SKILLS' onClick={onClickHandler}>
+        <a className={`${s.menu_link}`} href='#skills' onClick={onClickHandler}>
           Skills
           <FaTools className={`${s.icon}`} size={22} />
         </a>
         <a
           className={`${s.menu_link}`}
-          href='#PROJECTS'
+          href='#projects'
           onClick={onClickHandler}>
           Projects
           <BsFillBriefcaseFill className={`${s.icon}`} size={22} />
         </a>
         <a
           className={`${s.menu_link}`}
-          href='#CONTACT'
+          href='#contact'
           onClick={onClickHandler}>
           Contact
           <AiFillPhone className={`${s.icon}`} size={22} />

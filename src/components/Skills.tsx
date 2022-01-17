@@ -14,7 +14,7 @@ import {
 
 export default function Skills() {
   return (
-    <div id='SKILLS' className={`${s.skills}`}>
+    <div id='skills' className={`${s.skills}`}>
       <div className={`${s.skills_cont}`}>
         <h1>Skills</h1>
         <div className={`${s.skills_divvy}`}>
