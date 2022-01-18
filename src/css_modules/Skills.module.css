@@ -57,7 +57,7 @@
 
 .table_box {
   display: flex;
-  max-height: 80%;
+  max-height: 70%;
   max-width: 100%;
   align-self: center;
   flex-direction: column;

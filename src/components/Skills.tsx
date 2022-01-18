@@ -72,13 +72,13 @@ export default function Skills() {
             <h3>Soft Skills</h3>
             <div className={`${s.table_box}`}>
               <div className={`${s.table_label2}`}>Punctual</div>
-              <div className={`${s.table_label2}`}>Focused</div>
+              <div className={`${s.table_label2}`}>Responsible</div>
               <div className={`${s.table_label2}`}>Committed</div>
-              <div className={`${s.table_label2}`}>Attentive to detail</div>
+              <div className={`${s.table_label2}`}>Self-starter</div>
               <div className={`${s.table_label2}`}>Team-player</div>
               <div className={`${s.table_label2}`}>Good communicator</div>
               <div className={`${s.table_label2}`}>Adaptive</div>
-              <div className={`${s.table_label2}`}>Reliable</div>
+              <div className={`${s.table_label2}`}>Problem solver</div>
               <div className={`${s.table_label2}`}>Quick learner</div>
               <div className={`${s.table_label2}`}>Proactive</div>
             </div>
