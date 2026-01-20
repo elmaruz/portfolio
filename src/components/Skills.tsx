@@ -8,8 +8,8 @@ import {
   SiHtml5,
   SiCss3,
   SiPostgresql,
-  SiSequelize,
   SiExpress,
+  SiOpenai,
 } from 'react-icons/si';
 
 export default function Skills() {
@@ -42,20 +42,20 @@ export default function Skills() {
                 <SiNodedotjs />
               </div>
               <div className={`${s.table_label}`}>
+                Postgres
+                <SiPostgresql />
+              </div>
+              <div className={`${s.table_label}`}>
+                OpenAI
+                <SiOpenai />
+              </div>
+              <div className={`${s.table_label}`}>
                 HTML5
                 <SiHtml5 />
               </div>
               <div className={`${s.table_label}`}>
                 CSS3
                 <SiCss3 />
-              </div>
-              <div className={`${s.table_label}`}>
-                Postgres
-                <SiPostgresql />
-              </div>
-              <div className={`${s.table_label}`}>
-                Sequelize
-                <SiSequelize />
               </div>
               <div className={`${s.table_label}`}>
                 Express
