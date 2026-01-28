@@ -2,9 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import { google } from 'googleapis';
 
 const SLOT_DURATION_MINUTES = 30;
-const WORKING_HOURS_START = 9;
-const WORKING_HOURS_END = 17;
 const DAYS_AHEAD = 14;
+
+// Schedule per day of week (0 = Sunday, 1 = Monday, etc.)
+// Each day has an array of time ranges [startHour, endHour]
+const WEEKLY_SCHEDULE: Record<number, Array<[number, number]>> = {
+  0: [], // Sunday - not available
+  1: [[10, 12], [14, 17]], // Monday
+  2: [[10, 12], [14, 17]], // Tuesday
+  3: [[10, 12]], // Wednesday
+  4: [[10, 12], [14, 17]], // Thursday
+  5: [[10, 12], [14, 17]], // Friday
+  6: [], // Saturday - not available
+};
 
 function getOAuth2Client() {
   const oauth2Client = new google.auth.OAuth2(
@@ -20,17 +30,27 @@ function getOAuth2Client() {
 }
 
 function generateTimeSlots(date: Date): Date[] {
+  const dayOfWeek = date.getDay();
+  const schedule = WEEKLY_SCHEDULE[dayOfWeek];
+
+  if (!schedule || schedule.length === 0) {
+    return [];
+  }
+
   const slots: Date[] = [];
-  const start = new Date(date);
-  start.setHours(WORKING_HOURS_START, 0, 0, 0);
 
-  const end = new Date(date);
-  end.setHours(WORKING_HOURS_END, 0, 0, 0);
+  for (const [startHour, endHour] of schedule) {
+    const start = new Date(date);
+    start.setHours(startHour, 0, 0, 0);
 
-  let current = new Date(start);
-  while (current < end) {
-    slots.push(new Date(current));
-    current = new Date(current.getTime() + SLOT_DURATION_MINUTES * 60 * 1000);
+    const end = new Date(date);
+    end.setHours(endHour, 0, 0, 0);
+
+    let current = new Date(start);
+    while (current < end) {
+      slots.push(new Date(current));
+      current = new Date(current.getTime() + SLOT_DURATION_MINUTES * 60 * 1000);
+    }
   }
 
   return slots;
@@ -95,7 +115,9 @@ export async function GET(request: NextRequest) {
     const currentDate = new Date(timeMin);
     while (currentDate < timeMax) {
       const dayOfWeek = currentDate.getDay();
-      if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+      const schedule = WEEKLY_SCHEDULE[dayOfWeek];
+
+      if (schedule && schedule.length > 0) {
         const dateKey = currentDate.toISOString().split('T')[0];
         const slots = generateTimeSlots(currentDate);
 
@@ -117,10 +139,6 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       availability,
       slotDurationMinutes: SLOT_DURATION_MINUTES,
-      workingHours: {
-        start: WORKING_HOURS_START,
-        end: WORKING_HOURS_END,
-      },
     });
   } catch (error) {
     console.error('Availability error:', error);
