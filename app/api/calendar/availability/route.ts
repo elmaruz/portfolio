@@ -128,9 +128,7 @@ export async function GET(request: NextRequest) {
           })
           .map((slot) => slot.toISOString());
 
-        if (availableSlots.length > 0) {
-          availability[dateKey] = availableSlots;
-        }
+        availability[dateKey] = availableSlots;
       }
 
       currentDate.setDate(currentDate.getDate() + 1);

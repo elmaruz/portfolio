@@ -138,12 +138,10 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
   const now = new Date();
 
   const filteredAvailability: Record<string, string[]> = Object.fromEntries(
-    Object.entries(availability)
-      .map(([date, slots]) => [
-        date,
-        slots.filter((slot) => new Date(slot) > now),
-      ])
-      .filter(([, slots]) => slots.length > 0)
+    Object.entries(availability).map(([date, slots]) => [
+      date,
+      slots.filter((slot) => new Date(slot) > now),
+    ])
   );
 
   const dates = Object.keys(filteredAvailability);
