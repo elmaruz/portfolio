@@ -1,15 +1,36 @@
-import { redirect } from 'next/navigation';
+'use client';
+
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import Navbar from '@/components/Navbar';
+import Menu from '@/components/Menu';
 import Booking from '@/components/Booking';
 
-export const metadata = {
-  title: 'Book a Meeting | Leonardo Marussig',
-  description: 'Schedule a meeting with Leonardo Marussig',
-};
+const showBooking = process.env['NEXT_PUBLIC_ENABLE_BOOKING'] === 'true';
 
 export default function BookingPage() {
-  if (process.env['NEXT_PUBLIC_ENABLE_BOOKING'] !== 'true') {
-    redirect('/');
+  const router = useRouter();
+  const [modal, setModal] = useState(false);
+
+  useEffect(() => {
+    if (!showBooking) {
+      router.replace('/');
+    }
+  }, [router]);
+
+  if (!showBooking) {
+    return null;
   }
 
-  return <Booking />;
+  function mobile(): void {
+    setModal(!modal);
+  }
+
+  return (
+    <>
+      <Navbar mobile={mobile} modal={modal} showBooking={showBooking} />
+      {modal && <Menu mobile={mobile} modal={modal} showBooking={showBooking} />}
+      <Booking />
+    </>
+  );
 }

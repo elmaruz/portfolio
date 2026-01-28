@@ -25,7 +25,20 @@
 }
 
 .icon {
-  /* margin-left: 10px; */
   align-self: center;
-  /* size: 100x; */
+}
+
+.booking_link {
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px;
+  text-decoration: none;
+  background-color: whitesmoke;
+  color: rgb(53, 53, 53);
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
 }
