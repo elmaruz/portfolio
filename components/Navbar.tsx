@@ -29,7 +29,7 @@ export default function Navbar({ mobile, showBooking }: Props) {
           Projects
         </a>
         {showBooking && (
-          <a className={`${s.link}`} href='#booking'>
+          <a className={`${s.link}`} href='/booking'>
             Booking
           </a>
         )}

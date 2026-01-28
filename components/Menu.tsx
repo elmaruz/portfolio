@@ -39,10 +39,7 @@ export default function Menu({ mobile, showBooking }: Props) {
           <BsFillBriefcaseFill className={`${s.icon}`} size={22} />
         </a>
         {showBooking && (
-          <a
-            className={`${s.menu_link}`}
-            href='#booking'
-            onClick={onClickHandler}>
+          <a className={`${s.menu_link}`} href='/booking'>
             Booking
             <AiFillCalendar className={`${s.icon}`} size={22} />
           </a>

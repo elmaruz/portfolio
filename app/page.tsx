@@ -7,7 +7,6 @@ import Home from '@/components/Home';
 import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
-import Booking from '@/components/Booking';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
 
@@ -31,7 +30,6 @@ export default function Page() {
         <About />
         <Skills />
         <Projects />
-        {showBooking && <Booking />}
         <Contact />
       </div>
     </div>
