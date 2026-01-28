@@ -120,7 +120,12 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
   }
 
   if (loading) {
-    return <div className={s.loading}>Loading available times...</div>;
+    return (
+      <div className={s.loading}>
+        <div className={s.spinner}></div>
+        <p>Loading available times...</p>
+      </div>
+    );
   }
 
   if (error === 'Calendar not configured yet.') {
@@ -138,12 +143,10 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
   const now = new Date();
 
   const filteredAvailability: Record<string, string[]> = Object.fromEntries(
-    Object.entries(availability)
-      .map(([date, slots]) => [
-        date,
-        slots.filter((slot) => new Date(slot) > now),
-      ])
-      .filter(([, slots]) => slots.length > 0)
+    Object.entries(availability).map(([date, slots]) => [
+      date,
+      slots.filter((slot) => new Date(slot) > now),
+    ])
   );
 
   const dates = Object.keys(filteredAvailability);
