@@ -120,7 +120,12 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
   }
 
   if (loading) {
-    return <div className={s.loading}>Loading available times...</div>;
+    return (
+      <div className={s.loading}>
+        <div className={s.spinner}></div>
+        <p>Loading available times...</p>
+      </div>
+    );
   }
 
   if (error === 'Calendar not configured yet.') {
