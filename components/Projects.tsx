@@ -1,4 +1,4 @@
-import s from '../css_modules/Projects.module.css';
+import s from '@/styles/Projects.module.css';
 import {
   SiTypescript,
   SiReact,

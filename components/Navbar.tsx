@@ -1,12 +1,13 @@
-import s from '../css_modules/Navbar.module.css';
+import s from '@/styles/Navbar.module.css';
 import { AiOutlineMenu } from 'react-icons/ai';
 
 interface Props {
   mobile: () => void;
   modal: boolean;
+  showBooking?: boolean;
 }
 
-export default function Navbar({ mobile }: Props) {
+export default function Navbar({ mobile, showBooking }: Props) {
   function onClickHandler() {
     mobile();
   }
@@ -27,6 +28,11 @@ export default function Navbar({ mobile }: Props) {
         <a className={`${s.link}`} href='#projects'>
           Projects
         </a>
+        {showBooking && (
+          <a className={`${s.link}`} href='#booking'>
+            Booking
+          </a>
+        )}
         <a className={`${s.link}`} href='#contact'>
           Contact
         </a>

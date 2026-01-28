@@ -1,4 +1,4 @@
-import s from '../css_modules/Skills.module.css';
+import s from '@/styles/Skills.module.css';
 import {
   SiTypescript,
   SiJavascript,

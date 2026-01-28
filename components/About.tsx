@@ -1,4 +1,4 @@
-import s from '../css_modules/About.module.css';
+import s from '@/styles/About.module.css';
 import { AiOutlineLaptop } from 'react-icons/ai';
 import { BsFillLightbulbFill, BsFilm } from 'react-icons/bs';
 
