@@ -135,7 +135,18 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
     );
   }
 
-  const dates = Object.keys(availability);
+  const now = new Date();
+
+  const filteredAvailability: Record<string, string[]> = Object.fromEntries(
+    Object.entries(availability)
+      .map(([date, slots]) => [
+        date,
+        slots.filter((slot) => new Date(slot) > now),
+      ])
+      .filter(([, slots]) => slots.length > 0)
+  );
+
+  const dates = Object.keys(filteredAvailability);
 
   if (dates.length === 0) {
     return (
@@ -145,7 +156,7 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
     );
   }
 
-  const slots = selectedDate ? availability[selectedDate] || [] : [];
+  const slots = selectedDate ? filteredAvailability[selectedDate] || [] : [];
 
   return (
     <div className={s.booking_content}>
