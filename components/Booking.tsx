@@ -16,10 +16,8 @@ export default function Booking() {
   }
 
   return (
-    <div id="booking" className={s.booking}>
+    <div className={s.booking}>
       <div className={s.booking_cont}>
-        <h1>Book a Meeting</h1>
-
         {booked ? (
           <div className={s.booking_content}>
             <div className={s.success}>

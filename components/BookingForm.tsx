@@ -17,7 +17,9 @@ interface BookingFormProps {
 }
 
 export default function BookingForm({ onSuccess }: BookingFormProps) {
-  const [availability, setAvailability] = useState<Record<string, string[]>>({});
+  const [availability, setAvailability] = useState<Record<string, string[]>>(
+    {},
+  );
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
@@ -88,12 +90,12 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to book appointment');
+        throw new Error(data.error || 'Failed to book meeting');
       }
 
       onSuccess();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to book appointment');
+      setError(err instanceof Error ? err.message : 'Failed to book meeting');
     } finally {
       setSubmitting(false);
     }
@@ -125,12 +127,26 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
     return (
       <div className={s.not_configured}>
         <h3>Booking Coming Soon</h3>
-        <p>The booking system is being set up. Please check back later or use the contact links below.</p>
+        <p>
+          The booking system is being set up. Please check back later or use the
+          contact links below.
+        </p>
       </div>
     );
   }
 
-  const dates = Object.keys(availability);
+  const now = new Date();
+
+  const filteredAvailability: Record<string, string[]> = Object.fromEntries(
+    Object.entries(availability)
+      .map(([date, slots]) => [
+        date,
+        slots.filter((slot) => new Date(slot) > now),
+      ])
+      .filter(([, slots]) => slots.length > 0)
+  );
+
+  const dates = Object.keys(filteredAvailability);
 
   if (dates.length === 0) {
     return (
@@ -140,7 +156,7 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
     );
   }
 
-  const slots = selectedDate ? availability[selectedDate] || [] : [];
+  const slots = selectedDate ? filteredAvailability[selectedDate] || [] : [];
 
   return (
     <div className={s.booking_content}>
@@ -154,8 +170,7 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
             onClick={() => {
               setSelectedDate(date);
               setSelectedSlot(null);
-            }}
-          >
+            }}>
             {formatDate(date)}
           </button>
         ))}
@@ -169,8 +184,7 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
                 <button
                   key={slot}
                   className={`${s.slot_btn} ${selectedSlot === slot ? s.slot_btn_selected : ''}`}
-                  onClick={() => setSelectedSlot(slot)}
-                >
+                  onClick={() => setSelectedSlot(slot)}>
                   {formatTime(slot)}
                 </button>
               ))}
@@ -191,33 +205,32 @@ export default function BookingForm({ onSuccess }: BookingFormProps) {
 
           <form className={s.form} onSubmit={handleSubmit}>
             <input
-              type="text"
-              placeholder="Your Name *"
+              type='text'
+              placeholder='Your Name *'
               className={s.input}
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
             <input
-              type="email"
-              placeholder="Your Email *"
+              type='email'
+              placeholder='Your Email *'
               className={s.input}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
             <textarea
-              placeholder="Message (optional)"
+              placeholder='Message (optional)'
               className={`${s.input} ${s.textarea}`}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
             <button
-              type="submit"
+              type='submit'
               className={s.submit_btn}
-              disabled={submitting}
-            >
-              {submitting ? 'Booking...' : 'Book Appointment'}
+              disabled={submitting}>
+              {submitting ? 'Booking...' : 'Submit'}
             </button>
           </form>
         </>

@@ -11,48 +11,36 @@ import s from '@/styles/Menu.module.css';
 interface Props {
   mobile: () => void;
   modal: boolean;
-  showBooking?: boolean;
 }
 
-export default function Menu({ mobile, showBooking }: Props) {
+export default function Menu({ mobile }: Props) {
   function onClickHandler(): void {
     mobile();
   }
   return (
     <div>
-      <div className={`${s.menu}`}>
-        <a className={`${s.menu_link}`} href='#' onClick={onClickHandler}>
-          Home <AiFillHome className={`${s.icon}`} size={22} />
+      <div className={s.menu}>
+        <a className={s.menu_link} href='/' onClick={onClickHandler}>
+          Home <AiFillHome className={s.icon} size={22} />
         </a>
-        <a className={`${s.menu_link}`} href='#about' onClick={onClickHandler}>
-          About <AiFillInfoCircle className={`${s.icon}`} size={22} />
+        <a className={s.menu_link} href='/#about' onClick={onClickHandler}>
+          About <AiFillInfoCircle className={s.icon} size={22} />
         </a>
-        <a className={`${s.menu_link}`} href='#skills' onClick={onClickHandler}>
+        <a className={s.menu_link} href='/#skills' onClick={onClickHandler}>
           Skills
-          <FaTools className={`${s.icon}`} size={22} />
+          <FaTools className={s.icon} size={22} />
         </a>
-        <a
-          className={`${s.menu_link}`}
-          href='#projects'
-          onClick={onClickHandler}>
+        <a className={s.menu_link} href='/#projects' onClick={onClickHandler}>
           Projects
-          <BsFillBriefcaseFill className={`${s.icon}`} size={22} />
+          <BsFillBriefcaseFill className={s.icon} size={22} />
         </a>
-        {showBooking && (
-          <a
-            className={`${s.menu_link}`}
-            href='#booking'
-            onClick={onClickHandler}>
-            Booking
-            <AiFillCalendar className={`${s.icon}`} size={22} />
-          </a>
-        )}
-        <a
-          className={`${s.menu_link}`}
-          href='#contact'
-          onClick={onClickHandler}>
+        <a className={s.booking_link} href='/booking'>
+          Book a meeting
+          <AiFillCalendar className={s.icon} size={22} />
+        </a>
+        <a className={s.menu_link} href='/#contact' onClick={onClickHandler}>
           Contact
-          <AiFillPhone className={`${s.icon}`} size={22} />
+          <AiFillPhone className={s.icon} size={22} />
         </a>
       </div>
     </div>

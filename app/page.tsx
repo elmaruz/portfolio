@@ -7,11 +7,8 @@ import Home from '@/components/Home';
 import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
-import Booking from '@/components/Booking';
 import Contact from '@/components/Contact';
 import Menu from '@/components/Menu';
-
-const showBooking = process.env['NEXT_PUBLIC_ENABLE_BOOKING'] === 'true';
 
 export default function Page() {
   const [modal, setModal] = useState<boolean>(false);
@@ -22,16 +19,13 @@ export default function Page() {
 
   return (
     <div className={s.main}>
-      <Navbar mobile={mobile} modal={modal} showBooking={showBooking} />
+      <Navbar mobile={mobile} modal={modal} />
       <div className={s.sections}>
-        {modal ? (
-          <Menu mobile={mobile} modal={modal} showBooking={showBooking} />
-        ) : null}
+        {modal ? <Menu mobile={mobile} modal={modal} /> : null}
         <Home />
         <About />
         <Skills />
         <Projects />
-        {showBooking && <Booking />}
         <Contact />
       </div>
     </div>
