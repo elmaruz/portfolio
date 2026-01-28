@@ -1,4 +1,4 @@
-import s from '../css_modules/Contact.module.css';
+import s from '@/styles/Contact.module.css';
 import { AiFillLinkedin, AiFillGithub, AiFillMail } from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
 

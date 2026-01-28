@@ -42,20 +42,20 @@
 }
 
 .proj_box1 {
-  background-image: url(../../public/images/weather_app.png);
+  background-image: url(/images/weather_app.png);
   background-position: center;
   background-size: cover;
   transition: all 0.3s ease-in-out;
 }
 
 .proj_box2 {
-  background-image: url(../../public/images/Videogames_disp.png);
+  background-image: url(/images/Videogames_disp.png);
   background-position: center;
   background-size: cover;
 }
 
 .proj_box3 {
-  background-image: url(../../public/images/discogs-wantlist-finder.png);
+  background-image: url(/images/discogs-wantlist-finder.png);
   background-position: center;
   background-size: cover;
 }
