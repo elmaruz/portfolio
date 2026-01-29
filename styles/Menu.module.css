@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* align-items: center; */
   background-color: rgba(0, 0, 0, 0.85);
   position: fixed;
-  height: 100%;
+  top: 70px;
+  height: calc(100% - 70px);
   width: 100%;
   z-index: 1;
 }
@@ -21,24 +21,8 @@
   text-decoration: none;
   color: whitesmoke;
   cursor: pointer;
-  /* top: 40px; */
 }
 
 .icon {
   align-self: center;
-}
-
-.booking_link {
-  display: flex;
-  width: 30%;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding: 20px;
-  text-decoration: none;
-  background-color: whitesmoke;
-  color: rgb(53, 53, 53);
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
 }
