@@ -1,15 +1,21 @@
-.booking {
+.page {
   min-height: 100vh;
-  color: whitesmoke;
   background-color: rgb(48, 56, 75);
+}
+
+.booking {
+  color: whitesmoke;
   width: 100%;
   padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
 }
 
 .booking_cont {
   padding-top: 80px;
   margin-left: 5%;
   margin-right: 5%;
+  flex: 1;
 }
 
 .booking_content {
