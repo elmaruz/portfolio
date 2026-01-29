@@ -1,4 +1,4 @@
-import { AiFillHome, AiFillPhone, AiFillCalendar } from 'react-icons/ai';
+import { AiFillHome, AiFillPhone } from 'react-icons/ai';
 import { FaTools } from 'react-icons/fa';
 import { BsFillBriefcaseFill } from 'react-icons/bs';
 import s from '@/styles/Menu.module.css';
@@ -25,10 +25,6 @@ export default function Menu({ mobile }: Props) {
         <a className={s.menu_link} href='/#projects' onClick={onClickHandler}>
           Projects
           <BsFillBriefcaseFill className={s.icon} size={22} />
-        </a>
-        <a className={s.booking_link} href='/booking'>
-          Book a meeting
-          <AiFillCalendar className={s.icon} size={22} />
         </a>
         <a className={s.menu_link} href='/#contact' onClick={onClickHandler}>
           Contact

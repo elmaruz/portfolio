@@ -17,10 +17,6 @@
   gap: 20px;
   margin-left: 40px;
 }
-
-.nav_name {
-}
-
 .links {
   display: flex;
   width: 40%;
@@ -78,6 +74,6 @@
   }
 
   .booking_link {
-    display: none;
+    padding: 4px 8px;
   }
 }
