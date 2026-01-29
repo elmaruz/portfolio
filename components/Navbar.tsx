@@ -23,9 +23,6 @@ export default function Navbar({ mobile }: Props) {
         <a className={s.link} href='/'>
           Home
         </a>
-        <a className={s.link} href='/#about'>
-          About
-        </a>
         <a className={s.link} href='/#skills'>
           Skills
         </a>

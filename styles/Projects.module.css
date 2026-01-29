@@ -1,7 +1,8 @@
 .proj {
   height: 500px;
   color: whitesmoke;
-  background-color: rgb(62, 94, 170);
+  /* background-color: rgb(62, 94, 170); */
+  background-color: rgb(46, 76, 148);
   width: 100%;
   margin-top: -22px;
 }
