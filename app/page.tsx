@@ -4,7 +4,6 @@ import { useState } from 'react';
 import s from '@/styles/App.module.css';
 import Navbar from '@/components/Navbar';
 import Home from '@/components/Home';
-import About from '@/components/About';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
@@ -23,7 +22,6 @@ export default function Page() {
       <div className={s.sections}>
         {modal ? <Menu mobile={mobile} modal={modal} /> : null}
         <Home />
-        <About />
         <Skills />
         <Projects />
         <Contact />

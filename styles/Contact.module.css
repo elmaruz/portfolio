@@ -1,7 +1,8 @@
 .contact {
   height: 300px;
   color: whitesmoke;
-  background-color: rgb(78, 109, 184);
+  /* background-color: rgb(78, 109, 184); */
+  background-color: rgb(62, 94, 170);
   width: 100%;
   margin-top: -22px;
 }

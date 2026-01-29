@@ -1,9 +1,4 @@
-import {
-  AiFillHome,
-  AiFillInfoCircle,
-  AiFillPhone,
-  AiFillCalendar,
-} from 'react-icons/ai';
+import { AiFillHome, AiFillPhone, AiFillCalendar } from 'react-icons/ai';
 import { FaTools } from 'react-icons/fa';
 import { BsFillBriefcaseFill } from 'react-icons/bs';
 import s from '@/styles/Menu.module.css';
@@ -22,9 +17,6 @@ export default function Menu({ mobile }: Props) {
       <div className={s.menu}>
         <a className={s.menu_link} href='/' onClick={onClickHandler}>
           Home <AiFillHome className={s.icon} size={22} />
-        </a>
-        <a className={s.menu_link} href='/#about' onClick={onClickHandler}>
-          About <AiFillInfoCircle className={s.icon} size={22} />
         </a>
         <a className={s.menu_link} href='/#skills' onClick={onClickHandler}>
           Skills
